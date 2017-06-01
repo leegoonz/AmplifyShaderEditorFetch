@@ -67,11 +67,11 @@ namespace AmplifyShaderEditor
 
 		private const string OutlineVertexOffsetMode = "\tv.vertex.xyz += ( v.normal * {0} );";
 		private const string OutlineVertexScaleMode = "\tv.vertex.xyz *= ( 1 + {0});";
-        //Here is added line Width variable code for outline
-        private const string OutlineLineVariableMode = "\tv.vertex.xyz += ( v.normal * {0} ) * v.color.a;";
+		//Here is added line Width variable code for outline  
+		private const string OutlineLineVariableMode = "\tv.vertex.xyz += ( v.normal * {0} ) * v.color.a;";
 
 
-        private const string OutlineColorLabel = "Color";
+		private const string OutlineColorLabel = "Color";
 		private const string OutlineWidthLabel = "Width";
 
 		private const string ColorPropertyName = "_ASEOutlineColor";
@@ -247,7 +247,7 @@ namespace AmplifyShaderEditor
 					case OutlineMode.VertexOffset: body.Add( string.Format( OutlineVertexOffsetMode, WidthVariableAccessInstanced ) ); break;
 					case OutlineMode.VertexScale: body.Add( string.Format( OutlineVertexScaleMode, WidthVariableAccessInstanced ) ); break;
                     case OutlineMode.LineVariable: body.Add(string.Format(OutlineLineVariableMode, WidthVariableAccessInstanced)); break;
-                }
+				}
 				for ( int i = 0; i < OutlineBodyInstancedEnd.Length; i++ )
 				{
 					body.Add( OutlineBodyInstancedEnd[ i ] );
@@ -272,8 +272,8 @@ namespace AmplifyShaderEditor
 				{
 					case OutlineMode.VertexOffset: body.Add( string.Format( OutlineVertexOffsetMode, WidthPropertyName ) ); break;
 					case OutlineMode.VertexScale: body.Add( string.Format( OutlineVertexScaleMode, WidthPropertyName ) ); break;
-                    case OutlineMode.LineVariable: body.Add( string.Format( OutlineLineVariableMode, WidthPropertyName ) ); break;
-                }
+                    case OutlineMode.LineVariable: body.Add(string.Format(OutlineLineVariableMode, WidthPropertyName)); break;
+				}
 				for ( int i = 0; i < OutlineBodyDefaultEnd.Length; i++ )
 				{
 					body.Add( OutlineBodyDefaultEnd[ i ] );
